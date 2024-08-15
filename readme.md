@@ -11,6 +11,8 @@
 - **Scalability and Security**: Ensures high-performance verification while maintaining strong security guarantees.
 - **Open Source**: Source code is publicly available for community collaboration and improvement.
 
+![image](https://github.com/user-attachments/assets/2880b831-2a5b-4734-8ded-9457fe058d96)
+![image](https://github.com/user-attachments/assets/3a1aa7a2-5f3b-41a1-a6b0-e8e6799b9139)
 
 ## Theoretical Foundation
 
@@ -79,6 +81,29 @@ Before you begin, ensure you have the following installed:
    go run zkVerify.go
    expander compile --circuit=my_circuit --output=my_circuit.compiled
    ```
+![image](https://github.com/user-attachments/assets/1b802406-e9c6-4243-93ec-ba5702b00d6d)
+-> BNB Chain：0xE014fe8c4d5C23EDB7AC4011F226e869ac7Ef5CC 
+-> V2 BNB Chain: 0x8ddF05F9A5c488b4973897E278B58895bF87Cb24
+
+```
+function setOracle(uint16 dstChainId, address zkLightClient) external {
+
+    uint256 TYPE_ORACLE = 6;
+
+    ILayerZeroEndpoint(lzEndpointAddress).setConfig(
+
+        ILayerZeroEndpoint(lzEndpointAddress).getSendVersion(address(this)),
+
+        dstChainId,
+
+        TYPE_ORACLE,
+
+        abi.encode(zkLightClient)
+
+    );
+
+}
+```
 
 ## Project Structure
 
